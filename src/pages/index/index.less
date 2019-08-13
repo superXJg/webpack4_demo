@@ -1,0 +1,497 @@
+@import "index-section.less";
+@import "./../../assets/css/swiper.less";
+
+/*******************less全局配置*******************/
+@mainColor:#ff9e00;
+
+
+/*******************less全局配置*******************/
+/*******************官网组件*******************/
+.vv-btn{
+    display: inline-block;
+    color: #fff;
+    padding: 10px 40px;
+    font-size: 18px;
+    border-radius: 26px;
+    background: @mainColor;
+    transition: all .5s;
+    cursor: pointer;
+    &:hover{
+        background:#fff;
+        color: @mainColor;
+    }
+}
+/*******************官网组件*******************/
+
+body{
+    background: #f5f5f5;
+}
+/*******************顶部导航栏*******************/
+.vv-header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height:70px;
+    z-index: 2;
+    background: rgba(0,0,0,.85);
+    .rightContent{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+    .vv-layout{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+}
+.vv-layout{
+    max-width: 1520px;
+    margin: 0 5%;
+}
+.vv-logo{
+    width:220px;
+}
+.vv-nav {
+    display: flex;
+    li{
+        margin:0 15px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        a{
+            color: #fff;
+            font-size: 16px;
+        }
+        &.active,&:hover,a:hover{
+        color: @mainColor;
+        transition: all .5s;
+        }
+    }
+}
+.vv-lang{
+    position: relative;
+    display: inline-block;
+    border:1px solid #fff;
+    border-radius: 14px;
+    cursor: pointer;
+    a{
+        display:none;
+        color: #fff;
+        padding:4px 30px 4px 14px;
+        &.active{
+            display: block;
+        }
+    }
+    &:before{
+        content: "\e604";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        font-family: "iconfont";
+        color: #fff;
+        transform: translateY(-50%);
+    }
+    &:hover{
+        border-color: @mainColor;
+        a,&:before{
+            color:@mainColor;
+        }
+    }
+}
+//*******************顶部导航栏*******************
+
+//*******************HOME*******************
+#vv-home{
+    height: 100%;
+    .video-box{
+        display: flex;
+        height: 100%;
+        background: #010001;
+        video{
+            width: 100%;
+            object-fit: none;
+        }
+    }
+    .content{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 600px;
+        text-align: center;
+        .logo{
+            img{
+                width: 100%;
+                pointer-events: none;
+            }
+        }
+        .font-box{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            color: #fff;
+            width: 100%;
+            h2{
+                margin-bottom: 30px;
+                i{
+                    display: inline-block;
+                    font-size: 100px;
+                }
+                span{
+                    display: inline-block;
+                    font-size: 65px;
+                }
+            }
+            p{
+                font-size: 30px;
+                margin-bottom: 60px;
+            }
+        }
+      
+    }
+}
+
+/*******************HOME*******************/
+/*******************ABOUT*******************/
+
+@keyframes logomove
+{
+0% {box-shadow:0px 0 0 0px rgba(63,159,197,0.2)}
+100% {box-shadow:0px 5px 59px 0px rgba(63,159,197,0.2)}
+}
+#vv-about{
+    padding-top: 70px;
+    .about-info{
+        .font-box{
+            padding: 5% 2.5% 5% 0;
+            width: 50%;
+            strong{
+                display: block;
+                font-size:50px;
+                color: #333;
+            }
+            p{
+                font-size:18px;
+            }
+        }
+        .img-box{
+            position: relative;
+            width: 50%;
+            text-align: center;
+            margin-top: -5%;
+            .border{
+                display: inline-block;
+                border:3px solid rgba(226, 226, 226, 0.27);
+                border-radius: 100%;
+                padding: 80px;
+                .logo{
+                    display: inline-block;
+                    width: 300px;
+                    height: 300px;
+                    background: url('../../assets/image/index/about-logo.png') no-repeat center;
+                    background-size: 200px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border:1px solid rgba(216, 237, 244, 1);
+                    // box-shadow:0px 5px 59px 0px rgba(63,159,197,0.2);
+                    border-radius:50%;
+                    animation:logomove 3s infinite;
+                }
+            }
+          
+            span{
+                position: absolute;
+                width: 150px;
+                height: 150px;
+                line-height: 150px;
+                font-size:30px;
+                color: #fff;
+                border-radius: 100%;
+                &.a{
+                    right: -40px;
+                    top: 100px;
+                    background: linear-gradient(to right, #3bb5b6 , #42e397); /* 标准的语法 */
+                }
+                &.b{
+                    font-size: 20px;
+                    bottom: 0;
+                    right: 0px;
+                    background: linear-gradient(to right, #008aff , #00d8ff); /* 标准的语法 */
+
+                }
+                &.c{
+                    left: 0;
+                    bottom: 0;
+                    background: linear-gradient(to right, #ee727d , #fda23f); /* 标准的语法 */
+
+                }
+                &.d{
+                    font-size: 24px;
+                    left: 0;
+                    top: 100px;
+                    background: linear-gradient(to right, #907de4 , #21dfd1); /* 标准的语法 */
+
+                }
+            }
+        }
+    }
+    .about-swiper{
+        // position: relative;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 15px;
+        z-index: 2;
+        .swiper-button-prev,.swiper-button-next{
+            background-image: none;
+            left: 0;
+            bottom: 0;
+            margin-top: 0;
+            top: inherit;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border:1px solid #fff;
+            border-radius: 100%;
+            text-align: center;
+            i{
+                font-size: 24px;
+                color: #fff;
+      
+            }
+            &:focus{
+                outline:none;
+            }
+        }
+        .swiper-button-prev{
+            left: 21%;
+        }
+        .swiper-button-next{
+            left: 25%;
+        }
+        .swiper-slide{
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            .img-box{
+                img{
+                    width: 100%;
+                }
+            }
+            .font-box{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                padding: 20px;
+                p{
+                    opacity: 0;
+                    visibility: hidden;
+                    position: relative;
+                    font-size: 16px;
+                    transition:  all .5s;
+                    height: 100%;
+                    overflow: hidden;
+                }
+                &:before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height:0;
+                    background: rgba(0,0,0,.6);
+                    transition:  all .5s;
+                }
+            }
+            &:hover{
+                .font-box{
+                    &:before{
+                        height:100%;
+                    }
+                    p{
+                        opacity: 1;
+                        visibility:visible;
+                    }
+                }
+            }
+        }
+       
+    }
+    .name{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 0 100px 100px 0;
+        background: #fd9910;
+        color: rgba(255, 255, 255, 0.15);
+        padding: 20px 100px 50px 20px;
+        min-width: 40%;
+        span{
+            font-size: 60px;
+        }
+        p{
+            font-size: 80px;
+        }
+    }
+}
+/*******************ABOUT*******************/
+/*******************product*******************/
+#vv-product{
+    height: 100%;
+    padding-top: 70px;
+    background-repeat:no-repeat; 
+    background-color: #fd9c11;
+    // background: url('../../assets/image/index/product-bg.jpg') no-repeat;
+    background-size: cover;
+
+    .vv-layout{
+        position: relative;
+        height: 100%;
+    }
+    .font-box{
+        position: absolute;
+        right: 0;
+        width: 400px;
+        top: 10%;
+        color: #fff;
+        z-index: 3;
+        strong{
+            display: block;
+            font-weight: normal;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        p{
+            font-size: 18px;
+        }
+    }
+    .swiper{
+        display: flex;
+        align-items: center;
+        width: 220px;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .ball-box{
+        .ball{
+            position: absolute;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation-iteration-count:infinite;
+            animation-duration:2s;
+            &.ing{
+                animation-name: ballmove;
+                &.a1,&.a4,&.a7{
+                    animation-name: ballmove2;
+                }
+            }
+            &.a1{
+                right: 0;
+                bottom: 0;
+                width:300px;
+                height: 300px;
+                background-size: 280px;
+                background-image: url('../../assets/image/index/ball/1.png');
+                z-index: 2;
+                animation-delay:.5s;
+            }   
+            &.a2{
+                right: 250px;
+                bottom: 100px;
+                width: 80px;
+                height: 80px;
+                background-size: 80px;
+                background-image: url('../../assets/image/index/ball/2.png');
+                z-index: 3;
+                animation-delay:1s
+            }
+            &.a3{
+                bottom: 200px;
+                right: 150px;
+                width: 180px;
+                height: 180px;
+                background-size: 160px;
+                background-image: url('../../assets/image/index/ball/3.png');
+                animation-delay:.7s
+            }
+            &.a4{
+                left: 65%;
+                top: 30%;
+                width: 100px;
+                height: 100px;
+                background-size: 100px;
+                background-image: url('../../assets/image/index/ball/4.png');
+                animation-delay:.5s
+            }
+            &.a5{
+                left: 30%;
+                top: 40%;
+                width: 120px;
+                height: 120px;
+                background-size: 80px;
+                background-image: url('../../assets/image/index/ball/5.png');
+                animation-delay:.25s
+            }
+            &.a6{
+                left: 10%;
+                top: 65%;
+                width: 150px;
+                height: 150px;
+                background-size: 150px;
+                background-image: url('../../assets/image/index/ball/6.png');
+                animation-delay:.8s
+            }
+            &.a7{
+                left: 0;
+                top: 0;
+                width: 180px;
+                height: 180px;
+                background-size: 180px;
+                background-image: url('../../assets/image/index/ball/7.png');
+                z-index: 2;
+                animation-delay:.5s
+            }
+            &.a8{
+                left: 10%;
+                top: -5%;
+                width: 300px;
+                height: 300px;
+                background-size: 300px;
+                background-image: url('../../assets/image/index/ball/8.png');
+                animation-delay:.3s
+            }
+            &.a9{
+                left: 55%;
+                top: 40%;
+                width: 100px;
+                height: 100px;
+                background-size: 100px;
+                background-image: url('../../assets/image/index/ball/9.png');
+                animation-delay:.6s
+            }
+         
+        }
+    }
+}
+@keyframes ballmove
+{
+0% {transform: translateY(0)}
+50% {transform: translateY(-20px)}
+100% {transform: translateY(0)}
+}
+@keyframes ballmove2
+{
+0% {transform: translateY(0)}
+50% {transform: translateY(20px)}
+100% {transform: translateY(0)}
+}
+/*******************product*******************/
